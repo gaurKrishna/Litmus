@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<form method="POST" class="post-form">
+        {% csrf_token %}
+        <p><label for "name"><b> username</b></label>
+        <input type = "name" placeholder="enter username" name="username" ></p>
+
+       <p><label for="password"><b> Password</b></label>
+        <input type = "password" placeholder="enter password" name="password"></p>
+
+        <button type="submit" class="save btn btn-default">Save</button>
+</form>
+</body>
+</html>
