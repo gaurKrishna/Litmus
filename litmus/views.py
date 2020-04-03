@@ -17,19 +17,19 @@ from .tokens import account_activation_token
 from django.core.mail import EmailMessage
 
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
-@login_required
+@login_required(login_url='/litmus/login/')
 def home_view(request):
-    return redirect('home')
+    return render(request,'litmus/home.html')
 
-@login_required
-def special(request):
-    return HttpResponse("You are logged in !")
+def index(request):
+    return render(request,'litmus/index.html')
 
-@login_required
-def user_logout(request):
+@login_required(login_url ='/litmus/login/')
+def logout_view(request):
     logout(request)
-    return HttpResponseRedirect(reverse('signup'))
+    return render(request,'litmus/logout.html')
 
 def activation_sent_view(request):
     return render(request,'litmus/activation_sent.html')

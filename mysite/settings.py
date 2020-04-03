@@ -143,10 +143,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #)
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'xxxx@litmus.com'
-EMAIL_HOST_PASSWORD = 'xxxxxxxx'
+EMAIL_HOST_USER = 'xxxxx@litmus.com'
+EMAIL_HOST_PASSWORD = 'xxxxxxx'
 EMAIL_PORT = 587
 
+#LOGIN_URL = 'litmus/login/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
