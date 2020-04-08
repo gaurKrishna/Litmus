@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat, sans-serif;
+}
+
+body {
+    background-color: #f1f1f1;
+}
+
+
+/* For Navigation Bar -> STARTS */
+
+.nav_links li, a {
+    font-weight: 500;
+    font-size: medium;
+    color: #fff;
+    text-decoration: none;
+}
+
+header {
+    background: #422057FF;
+    display: flex;
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    height: 50px;
+    color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+header h1{
+    cursor: context-menu;
+}
+
+.nav_links {
+    list-style: none;
+}
+
+.nav_links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav_links li a {
+    transition: all 0.2s ease 0s;
+}
+
+.nav_links li a:hover {
+    color: #ffd54f;
+}
+
+/* LOGIN */
+
+
+.major{
+    color: #F2AA4CFF;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: #422057FF;
+    position: relative;
+    padding: 70px calc(1px + 7vw);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content-part-1{
+    padding: 0 20px;
+}
+
+.content-part-1 h1{
+    padding: 7px 0;
+    font-size: calc(1rem + 2.5vw);
+}
+
+.content-part-1 p{
+    padding: 14px 0 25px 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#content-part-1-button{
+    cursor: pointer;
+    padding: 10px 25px;
+    background-color: #fff;
+    color: #F2AA4CFF;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 40px;
+    transition: .2s ease-out;
+}
+
+#content-part-1-button:hover{
+    background-color: #F2AA4CFF;
+    color: #fff;
+}
+
+.formbox{
+    width: 380px;
+    height: 540px;
+    border-radius: 40px;
+    position: relative;
+    background: white;
+    padding: 5px;
+    overflow: hidden;
+}
+.buttonbox{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+}
+
+button:focus{
+    outline: 0;
+}
+
+.toggle-btn{
+    padding: 10px 0;
+    width: 107px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+/*  outline: none; */
+    position: relative;
+}
+#btn{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: #F2AA4CFF;
+    border-radius: 30px;
+    transition: 0.5s;
+
+}
+.socialicons{
+    margin: 30px auto;
+    text-align: center;
+}
+.socialicons img{
+    width: 30px;
+    margin: 0 12px;
+    box-shadow: 0 0 20px 0 #7f7f7f3d;
+    cursor: pointer;
+    border-radius: 50%;
+
+}
+.input-group{
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: 0.5s;
+}
+.input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+.submit-btn{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: #F2AA4CFF;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+
+
+#login{
+    left: 50px;
+
+}
+#register{
+    left: 450px;
+}
+.psw{
+    float: right;
+    padding-top: 16px;
+    font-size: 12px;
+}
+ */
+
+/* next */
+
+
+.container-2 {
+    margin-top: 10px;
+    background-color: #F2AA4CFF;
+    height: 620px;
+    font-size: 17px;
+}
+
+.heading {
+    color: #422057FF;
+    font-size:50px;
+    margin-left: 520px;
+}
+.fbutton{
+    background-color:#fff;
+    padding: 13px;
+    border-radius: 40px;
+    border: none;
+    font-size: 18px;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: pointer;
+    margin-left: 620px;
+    color: #422057FF;
+    transition: 0.3s ease-in-out;
+}
+.fbutton:hover
+{
+    color:#fff;
+    background-color: #422057FF;
+}
+.flex {
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    margin-left: 180px;
+}
+.box-1 img{
+    margin-top: -30px;
+}
+.box-1 h2
+{
+
+    margin-top: -12px;
+}
+.box-1,.box-2,.box-3{
+    background: white;
+    color: #422057FF;
+    width: 300px;
+    height: 510px;
+    line-height: 30px;
+    margin: 15px;
+    padding: 30px;
+    border-radius: 30px;
+}

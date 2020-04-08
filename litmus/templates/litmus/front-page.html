@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Litmus</title>
+        <link rel="stylesheet" type="text/css" href="/static/litmus/css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Litmus</h1>
+            <ul class="nav_links" >
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Features</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </header>
+
+
+        <div class="major">
+
+            <div class="content-part-1">
+                <h1>Organise your ideas</h1>
+                <h1>Boost your productivity</h1>
+                <p>save and share with your friends</p>
+                <a href="" class=""><button id="content-part-1-button">Watch How ?</button></a>
+            </div>
+
+
+            <div class="formbox">
+                <div class="buttonbox">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                    <button type="button" class="toggle-btn" onclick="register()">Register</button>
+              </div>
+
+              <div class="socialicons">
+                    <img src="/static/litmus/images/facebook.png">
+                    <img src="/static/litmus/images/twitter.png">
+                    <img src="/static/litmus/images/googleplus.png">
+                    <img src="/static/litmus/images/linkedin.png">
+                </div>
+
+                <form method='post' id="login" class="input-group">
+                  {% csrf_token %}
+
+                    <input type="email" class="input-field" placeholder="email" name="email" required>
+                    &nbsp;
+                    <input type="password" class="input-field" placeholder="Enter Password" name="password" required>
+                    &nbsp;&nbsp;
+                    <button type="submit" class="submit-btn">Log in</button>
+                    <a class="psw" href="#">Forgot Password ?</a>
+
+                </form>
+
+                <form method='post' id="register" class="input-group">
+                  {% csrf_token %}
+                   {% for fields in signup_form %}
+                     {{fields}}
+                   {% endfor %}
+
+                    <button type="submit" class="submit-btn">Register</button>
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <div class="container-2" >
+            <h1 class="heading" style="padding: 50px;">I &nbsp;<span class="heart"> <img src="/static/litmus/images/whiteheart.png" height="35px" width="35px" style="margin-top: 100px;"></span> &nbsp;Litmus</h1>
+            <button type="button" class="fbutton">Get Started</button>
+            <div class="flex">
+                <div class="box-1">
+                    <img src="/static/litmus/images/diary.png" width="200px">
+                    <h2 style="text-align: center; font-size: 30px;">Digital Diary.</h2><br>
+                <p>Litmus helps you create, edit and organize all your notes and documents in a single place.Take notes, sketch ideas and write texts as naturally and freely as you do on paper</p>
+                </div>
+                <div class="box-2">
+                    <img src="/static/litmus/images/friendship.png" width="150px" height="130px" style="margin-left: 40px;">
+                    <h2 style="text-align: center; font-size: 30px;">Make Friends.</h2><br>
+                    <p>Litmus allows you to scale your digital notes outreach, creating positive impressions and long lasting bonds.Sync and share seemlessly your notes with your friends and loved ones.</p>
+                </div>
+                <div class="box-3">
+                    <h1 style=" margin-top: 150px; margin-left: 100px; font-size: 70px;">+</h1>
+                    <h2 style="margin-top: 20px; margin-left: 50px;"> Many More</h2>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+
+            function register(){
+
+                x.style.left = "-400px";
+                y.style.left = "50px";
+                z.style.left = "110px";
+
+            }
+            function login(){
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0px";
+            }
+        </script>
+
+    </body>
+</html>

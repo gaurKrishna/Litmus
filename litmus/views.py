@@ -2,7 +2,11 @@ from django.contrib.auth import login, authenticate,logout
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_text
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
+
+from django.contrib.auth import get_user_model
+User = get_user_model()
+
 from django.db import IntegrityError
 from django.utils.http import urlsafe_base64_decode
 from django.utils.encoding import force_bytes
@@ -24,7 +28,9 @@ def home_view(request):
     return render(request,'litmus/home.html')
 
 def index(request):
-    return render(request,'litmus/index.html')
+    #return render(request,'litmus/front-page.html')
+    return render(request, 'litmus/index.html', {'signup_form': SignUpForm()})
+
 
 @login_required(login_url ='/litmus/login/')
 def logout_view(request):
@@ -56,9 +62,11 @@ def signup_view(request):
         if form.is_valid():
             user = form.save()
             user.refresh_from_db()
+            user.profile.nick_name = form.cleaned_data.get('nick_name')
             user.profile.first_name = form.cleaned_data.get('first_name')
             user.profile.last_name = form.cleaned_data.get('last_name')
-            user.profile.email = form.cleaned_data.get('email')
+            user.email = form.cleaned_data.get('e_mail')
+            #user.profile.email = form.cleaned_data.get('email')
             #user.profile.password1 = form.cleaned_data.get('password1')
             # user can't login until link confirmed
             user.is_active = False
@@ -74,7 +82,7 @@ def signup_view(request):
                 # method will generate a hash value with user related data
                 'token': account_activation_token.make_token(user),
             })
-            to_email = form.cleaned_data.get('email')
+            to_email = form.cleaned_data.get('e_mail')
             email = EmailMessage(subject,message,to=[to_email])
             email.send()
 
@@ -82,13 +90,13 @@ def signup_view(request):
             return redirect('activation_sent')
     else:
         form = SignUpForm()
-    return render(request, 'litmus/signup.html', {'signup_form': SignUpForm()})
+    return render(request, 'litmus/front-page.html', {'signup_form': SignUpForm()})
 
 def login_view(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
+        email = request.POST.get('email')
         password = request.POST.get('password')
-        user = authenticate(username=username, password=password)
+        user = authenticate(email=email, password=password)
         if user is not None:
             if user.is_active:
                 login(request,user)
