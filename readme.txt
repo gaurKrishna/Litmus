@@ -1,6 +1,6 @@
 Welcome.
 
-This project is cuurently under working..
+This project is currently under working..
 
 For collaborators and contributors:
 Follow these steps:
