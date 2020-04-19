@@ -16,7 +16,7 @@ def index(request):
 # View for # /homepagedemo/addnotes/
 def add(request):
     # Saving newly added notes from the homepage 
-    newnote = request.POST.get("newnote", None)
+    newnote = request.POST.get("newnote")
     n = Notes(diary_notes = newnote)
     n.save()
     return render(request, 'homepage/homepagedemo.html', {'latestnote': n})    

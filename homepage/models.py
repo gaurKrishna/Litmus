@@ -1,5 +1,5 @@
 from django.db import models
-from litmus.models import Profile
+#from litmus.models import Profile
 
 # Model to save notes
 class Notes(models.Model):

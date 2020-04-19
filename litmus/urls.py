@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import include, path
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from . import views
@@ -13,6 +13,7 @@ urlpatterns= [
   path('sent/',views.activation_sent_view,name='activation_sent'),
   path('activate/<slug:uidb64>/<slug:token>/',views.activate,name='activate'),
   path('logout/',views.logout_view,name='logout'),
+  path('homepagedemo/', include('homepage.urls')),
 ]
 
 urlpatterns += static((settings.STATIC_URL), document_root=(settings.STATIC_ROOT))
