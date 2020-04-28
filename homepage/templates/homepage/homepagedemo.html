@@ -3,11 +3,11 @@
     <p><strong>{{ error_message }}</strong></p>
 {% endif %}
 
-<form action = "{% url 'homepagedemo:add' %}" method = "Post">
+<form action = "{% url 'homepagedemo:add' user_id %}" method = "Post">
     {% csrf_token %}
     <input type = "text" name = "newnote" value = ""/>
     <input type = "submit" value = "Add notes">
 </form>
 
 <h2>Your most recent note</h2><br>
-<div>{{ latestnote.diary_notes }}</div>
+<div>{{ latestnote }}</div>
